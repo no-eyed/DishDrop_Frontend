@@ -35,7 +35,12 @@ export default function MainHeader() {
                 }
                 <li><NavLinks href="/community">Foodies Community</NavLinks></li>
                 {
-                    !isSignedIn && (<li><NavLinks href="/sign-in">Sign In</NavLinks></li>)
+                    !isSignedIn && (
+                    <>
+                        <li><NavLinks href="/sign-in">Sign In</NavLinks></li>
+                        <li><NavLinks href="/sign-up">Sign Up</NavLinks></li>
+                    </>
+                    )
                 }   
                 <li> <UserButton afterSignOutUrl="/"/></li>
             </ul>

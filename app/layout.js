@@ -7,9 +7,11 @@ export const metadata = {
   description: 'Delicious meals, shared by a food-loving community.',
 };
 
+const publishableKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
+
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey={publishableKey}>
     <html lang="en">
       <body>
         <MainHeader />
