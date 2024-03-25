@@ -5,10 +5,12 @@ import classes from './page.module.css';
 import { useFormState } from 'react-dom';
 import Link from 'next/link';
 import MealsFormSubmit from '@/components/meals/meals-form-submit';
+import { useSearchParams } from 'next/navigation';
 
 export default function DeleteMealPage({params}) {
     const mealId = params.id;
-    const [state, formAction] = useFormState(deleteMeal, {message: null, id: mealId});
+    const image = useSearchParams().get('image');
+    const [state, formAction] = useFormState(deleteMeal, {message: null, id: mealId, image: image});
 
     return (
         <>
@@ -20,7 +22,6 @@ export default function DeleteMealPage({params}) {
         </header>
         <main>
             <form className={classes.actions} action={formAction}>
-                {/* <p style={{display: 'none'}}><input name='id' value={mealId} readOnly={true}></input></p> */}
                 <MealsFormSubmit className={classes.actions_delete} active={'Deleting...'} passive={'Delete'}/>
                 <Link href={`/my-meals`} className={classes.actions_cancel}>Cancel</Link>
             </form>
