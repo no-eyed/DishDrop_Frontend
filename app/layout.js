@@ -3,7 +3,7 @@ import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata = {
-  title: 'NextLevel Food',
+  title: 'DishDrop',
   description: 'Delicious meals, shared by a food-loving community.',
 };
 

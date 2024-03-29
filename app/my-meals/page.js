@@ -6,6 +6,9 @@ import { Suspense } from 'react';
 
 async function Meals() {
     const meals = await getMyMeals();
+    if(!meals) {
+        return <div className={classes.noMeals}> <h1>You have not shared any meals yet</h1></div>;
+    }
     return <MyMealsGrid meals={meals} />;
 }
 
